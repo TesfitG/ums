@@ -20,7 +20,7 @@ class DB
 			
 		
         try {		
-            $this->_pdo = new PDO('mysql:host=127.0.0.1;dbname='.$dbname, $username, $password );
+            $this->_pdo = new PDO('mysql:host=localhost;dbname='.$dbname, $username, $password );
 			
 			
         } catch (PDOException $e) {
@@ -84,7 +84,7 @@ class DB
 			
 			//self::$_instance = new PDO('mysql:host=127.0.0.1;dbname='.$dbname, 'root', '' );
             
-			self::$_instance = new PDO('mysql:host=127.0.0.1;dbname='.$dbname, $username, $password );
+			self::$_instance = new PDO('mysql:host=localhost;dbname='.$dbname, $username, $password );
         }
 		
         return self::$_instance;
