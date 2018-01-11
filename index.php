@@ -8,7 +8,8 @@ if (Session::exists('user')) {
 }
 	if(isset($_GET['univ']))
 		$_SESSION['link']= $_GET['univ'];
-
+	else
+		$_SESSION['link']= 'astu';
 ?>
 
 
