@@ -8,8 +8,47 @@ class DB
 	
     private function __construct()
     {
+		$dbname='';
+		$username='';
+		$password='';
+		if(isset($_SESSION['link']))
+		{
+			switch($_SESSION['link'])
+			{
+				case 'astu': 
+				$dbname = 'gcp_560d7f4ddd1bd4129f05'; 
+				$username='bc1b42e7e30580';
+				$password='67a767d6';
+				break;
+				
+				case 'aau': 
+				$dbname = 'gcp_7a6e18880e1cd5299b68'; 
+				$username='bf794cad1dacca';
+				$password='87b7008b';
+				break;
+				
+				case 'aastu': 
+				$dbname = 'gcp_9436d56f0606144ebf97'; 
+				$username='b8e83f022c3dd7';
+				$password='4403f4e0';
+				break;
+				
+				case 'du': 
+				$dbname = 'gcp_a4a8800ef254dfac2b96';
+				$username='bb1367cc04f65d';
+				$password='b30cb857';
+				break;
+				
+				default: 
+				$dbname = 'gcp_560d7f4ddd1bd4129f05'; 
+				$username='bc1b42e7e30580';
+				$password='67a767d6';
+				break;
+			}
+		}
+		
         try {		
-            $this->_pdo = new PDO('mysql:host=127.0.0.1;dbname='.$dbname, $username, $password );
+            $this->_pdo = new PDO('mysql:host=us-cdbr-gcp-east-01.cleardb.net;dbname='.$dbname, $username, $password );
         } catch (PDOException $e) {
             die($e->getMessage());
         }
