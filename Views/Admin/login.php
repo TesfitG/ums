@@ -18,7 +18,7 @@ else
 
 if ( $_SESSION[ 'reload' ] == 'Yes' && isset( $_GET[ 'univ' ] ) )
 	$initial_univ = $_GET[ 'univ' ];
-else
+else if ($_SESSION[ 'reload' ] == 'Yes' && !isset( $_GET[ 'univ' ] ))
 	$initial_univ = "";
 
 if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' ) {
