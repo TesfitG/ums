@@ -48,6 +48,10 @@ class DB
 		
         try {		
             $this->_pdo = new PDO('mysql:host=104.196.163.17;dbname='.$dbname, $username, $password );
+			$status = $this->_pdo->getAttribute(PDO::ATTR_CONNECTION_STATUS);
+			print(status);
+			
+			
         } catch (PDOException $e) {
             die($e->getMessage());
         }
@@ -104,8 +108,7 @@ class DB
             
 			self::$_instance = new PDO('mysql:host=104.196.163.17;dbname='.$dbname, $username, $password );
         }
-		$status = self::$_instance->_pdo->getAttribute(PDO::ATTR_CONNECTION_STATUS);
-		print(status);
+		
         return self::$_instance;
     }
 
