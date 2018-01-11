@@ -61,9 +61,6 @@ if (Session::exists('user')) {
 		                    echo '<img class="profile-img" src="Views/assets/images/logo.gif">';
 
 				}
-				
-				
-				
 				?>
 				
 				

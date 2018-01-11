@@ -10,12 +10,20 @@ session_start();
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if (Input::exists('post')){
         if (Validation::valid(Input::get('email')) && Validation::valid(Input::get('password'))){
+			echo '<script language="javascript">';
+			echo 'window.alert("valid input");';
+			echo '</script>';}
             if (Validation::emailValidation(Input::get('email'))){
                 if (!Unique::checkUser(Input::get('email'))){
                     $userData = Unique::getUserData();
                     if (Input::get('email') === $userData->email && hash('sha256', Input::get('password')) === $userData->password){
                         Session::put('user', $userData->id);
+						echo '<script language="javascript">';
+						echo 'window.alert("unable to redirect men");';
+						echo '</script>';}
+
                         Redirect::to('index.php');
+						
                     }else{
                         Session::put('error', 'Email or password not valid. please try again.');
                         Redirect::to('../../index.php');
@@ -38,4 +46,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
 }else{
     Redirect::to('../../index.php');
+				echo '<script language="javascript">';
+			echo 'window.alert("redirecting to main index.php");';
+			echo '</script>';}
+
 }
