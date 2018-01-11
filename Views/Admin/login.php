@@ -21,22 +21,43 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                         Session::put('user', $userData->id);
                         Redirect::to('index.php');
                     }else{
+						echo '<script language="javascript">';
+						echo 'window.alert("no login 1");';
+						echo '</script>';
+
                         Session::put('error', 'Email or password not valid. please try again.');
                         Redirect::to('../../index.php');
+						
                     }
                 }else{
+						echo '<script language="javascript">';
+						echo 'window.alert("no login 2");';
+						echo '</script>';
+
                     Session::put('error', 'Email or password not valid.');
                     Redirect::to('../../index.php');
                 }
             }else{
+						echo '<script language="javascript">';
+						echo 'window.alert("no login 3");';
+						echo '</script>';
+
                 Session::put('error', 'Email not valid !');
                 Redirect::to('../../index.php');
             }
         }else{
+									echo '<script language="javascript">';
+						echo 'window.alert("no login 4");';
+						echo '</script>';
+
             Session::put('error', 'Invalid input !');
             Redirect::to('../../index.php');
         }
     }else{
+								echo '<script language="javascript">';
+						echo 'window.alert("no login 5");';
+						echo '</script>';
+
         Session::put('error', 'Email or Password not be empty!');
         Redirect::to('../../index.php');
     }
