@@ -12,7 +12,7 @@ error_reporting( E_ALL );
 ini_set( 'display_errors', '1' );
 
 if ( isset( $_SESSION[ 'reload' ] ) )
-	$_SESSION[ 'reload' ] = 'No'
+	$_SESSION[ 'reload' ] = 'No';
 else
 	$_SESSION[ 'reload' ] = 'Yes';
 
@@ -29,7 +29,7 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' ) {
 					$userData = Unique::getUserData();
 					if ( Input::get( 'email' ) === $userData->email && hash( 'sha256', Input::get( 'password' ) ) === $userData->password ) {
 						Session::put( 'user', $userData->id );
-							Redirect::to( 'index.php');
+						Redirect::to( 'index.php');
 
 					} else {
 
