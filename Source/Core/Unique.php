@@ -15,7 +15,7 @@ class Unique
     {
         self::$pdo = DB::getDB();
 
-        $sql = "SELECT * FROM `admin_login` WHERE `email` = :email";
+        $sql = "SELECT * FROM admin_login WHERE email = :email";
         $query = self::$pdo->prepare($sql);
         $taskReplay = $query->execute(
             array(
