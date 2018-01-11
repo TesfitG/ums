@@ -7,7 +7,14 @@ use App\Core\Redirect;
 use App\Core\Validation;
 session_start();
 //print_r($_POST);exit();
+
+echo '<script language="javascript">';
+			echo 'window.alert("welcome alert");';
+			echo '</script>';}
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
+	echo '<script language="javascript">';
+			echo 'window.alert("it is ofcourse post");';
+			echo '</script>';}
     if (Input::exists('post')){
         if (Validation::valid(Input::get('email')) && Validation::valid(Input::get('password'))){
 			echo '<script language="javascript">';
