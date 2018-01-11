@@ -59,6 +59,11 @@ class DB
 		$dbname='';
 		$username='';
 		$password='';
+		if(!isset($_SESSION['link']))
+		{
+			$_SESSION['link'] = 'astu';
+		}
+		
 			switch($_SESSION['link'])
 			{
 				case 'astu': 
