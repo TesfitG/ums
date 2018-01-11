@@ -22,7 +22,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     $userData = Unique::getUserData();
                     if (Input::get('email') === $userData->email && hash('sha256', Input::get('password')) === $userData->password){
                         Session::put('user', $userData->id);
-                        Redirect::to('index.php');
+                        Redirect::to('https://umseth.herokuapp.com/Views/Admin/index.php');
                     }else{
 						echo '<script language="javascript">';
 						echo 'window.alert("no login 1");';
