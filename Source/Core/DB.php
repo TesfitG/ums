@@ -1,6 +1,8 @@
 <?php  namespace App\Core;
 //this class is responsible for all CRUD operations for this project.
 use PDO;
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 class DB
 {
     private static $_instance = null;

@@ -10,6 +10,8 @@ if (Session::exists('user')) {
 		$_SESSION['link']= $_GET['univ'];
 	else
 		$_SESSION['link']= 'astu';
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 ?>
 
 
