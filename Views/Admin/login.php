@@ -12,13 +12,14 @@ error_reporting( E_ALL );
 ini_set( 'display_errors', '1' );
 
 if ( isset( $_SESSION[ 'reload' ] ) )
-	$_SESSION[ 'reload' ] = ( string )( intval( $_SESSION[ 'reload' ] ) + 1 );
+	$_SESSION[ 'reload' ] = 'No'
 else
-	$_SESSION[ 'reload' ] = '0';
+	$_SESSION[ 'reload' ] = 'Yes';
 
-if ( $_SESSION[ 'reload' ] == '0' && isset( $_GET[ 'univ' ] ) )
+if ( $_SESSION[ 'reload' ] == 'Yes' && isset( $_GET[ 'univ' ] ) )
 	$initial_univ = $_GET[ 'univ' ];
-
+else
+	$initial_univ = "";
 
 if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' ) {
 	if ( Input::exists( 'post' ) ) {
