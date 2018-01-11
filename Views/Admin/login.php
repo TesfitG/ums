@@ -11,6 +11,9 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
+echo '<script language="javascript">';
+						echo 'window.alert("test echo");';
+						echo '</script>';
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if (Input::exists('post')){
         if (Validation::valid(Input::get('email')) && Validation::valid(Input::get('password'))){
@@ -54,7 +57,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             Redirect::to('../../index.php');
         }
     }else{
-								echo '<script language="javascript">';
+						echo '<script language="javascript">';
 						echo 'window.alert("no login 5");';
 						echo '</script>';
 
