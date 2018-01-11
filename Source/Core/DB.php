@@ -10,17 +10,16 @@ class DB
 	
     private function __construct()
     {
-		$dbname = 'ums';
-		$username='root';
-		$
-		//$dbname='gcp_560d7f4ddd1bd4129f05';
-		//$username='bc1b42e7e30580';
-		//$password='67a767d6';
+		$dbname='gcp_560d7f4ddd1bd4129f05';
+		$username='bc1b42e7e30580';
+		$password='67a767d6';
 		
 			
 		
         try {		
             $this->_pdo = new PDO('mysql:host=104.196.163.17;dbname='.$dbname, $username, $password );
+			$status = $this->_pdo->getAttribute(PDO::ATTR_CONNECTION_STATUS);
+			print(status);
 			
 			
         } catch (PDOException $e) {
