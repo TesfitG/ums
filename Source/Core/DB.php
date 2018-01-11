@@ -11,8 +11,7 @@ class DB
 		$dbname='';
 		$username='';
 		$password='';
-		if(isset($_SESSION['link']))
-		{
+		
 			switch($_SESSION['link'])
 			{
 				case 'astu': 
@@ -44,11 +43,11 @@ class DB
 				$username='bc1b42e7e30580';
 				$password='67a767d6';
 				break;
-			}
+			
 		}
 		
         try {		
-            $this->_pdo = new PDO('mysql:host=us-cdbr-gcp-east-01.cleardb.net;dbname='.$dbname, $username, $password );
+            $this->_pdo = new PDO('mysql:host=104.196.163.17;dbname='.$dbname, $username, $password );
         } catch (PDOException $e) {
             die($e->getMessage());
         }
@@ -60,8 +59,6 @@ class DB
 		$dbname='';
 		$username='';
 		$password='';
-		if(isset($_SESSION['link']))
-		{
 			switch($_SESSION['link'])
 			{
 				case 'astu': 
@@ -94,13 +91,13 @@ class DB
 				$password='67a767d6';
 				break;
 			}
-		}
+		
 		
         if (!isset(self::$_instance)) {
 			
 			//self::$_instance = new PDO('mysql:host=127.0.0.1;dbname='.$dbname, 'root', '' );
             
-			self::$_instance = new PDO('mysql:host=us-cdbr-gcp-east-01.cleardb.net;dbname='.$dbname, $username, $password );
+			self::$_instance = new PDO('mysql:host=104.196.163.17;dbname='.$dbname, $username, $password );
         }
         return self::$_instance;
     }
