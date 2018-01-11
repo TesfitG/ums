@@ -11,9 +11,7 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
-echo '<script language="javascript">';
-						echo 'window.alert("test echo");';
-						echo '</script>';
+
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if (Input::exists('post')){
         if (Validation::valid(Input::get('email')) && Validation::valid(Input::get('password'))){
@@ -22,32 +20,24 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     $userData = Unique::getUserData();
                     if (Input::get('email') === $userData->email && hash('sha256', Input::get('password')) === $userData->password){
                         Session::put('user', $userData->id);
-                       echo '<script language="javascript">';
-						echo 'window.alert("login success");';
-						echo '</script>';
+
 					   
 					    Redirect::to('index.php');
                     }else{
-						echo '<script language="javascript">';
-						echo 'window.alert("no login 1");';
-						echo '</script>';
+						
 
                         Session::put('error', 'Email or password not valid. please try again.');
-                        //Redirect::to('../../index.php');
+                        Redirect::to('../../index.php');
 						
                     }
                 }else{
-						echo '<script language="javascript">';
-						echo 'window.alert("no login 2");';
-						echo '</script>';
+						
 
                     Session::put('error', 'Email or password not valid.');
-                    //Redirect::to('../../index.php');
+                    Redirect::to('../../index.php');
                 }
             }else{
-						echo '<script language="javascript">';
-						echo 'window.alert("no login 3");';
-						echo '</script>';
+						
 
                 Session::put('error', 'Email not valid !');
                 //Redirect::to('../../index.php');
@@ -58,7 +48,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 						echo '</script>';
 
             Session::put('error', 'Invalid input !');
-            //Redirect::to('../../index.php');
+            Redirect::to('../../index.php');
         }
     }else{
 						echo '<script language="javascript">';
@@ -66,11 +56,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 						echo '</script>';
 
         Session::put('error', 'Email or Password not be empty!');
-        //Redirect::to('../../index.php');
+        Redirect::to('../../index.php');
     }
 }else{
 	echo '<script language="javascript">';
 						echo 'window.alert("no login 6");';
 						echo '</script>';
-   // Redirect::to('../../index.php');
+    Redirect::to('../../index.php');
 }
