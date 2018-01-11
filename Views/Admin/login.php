@@ -29,10 +29,7 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' ) {
 					$userData = Unique::getUserData();
 					if ( Input::get( 'email' ) === $userData->email && hash( 'sha256', Input::get( 'password' ) ) === $userData->password ) {
 						Session::put( 'user', $userData->id );
-						if ( !$initial_univ == "" )
-							Redirect::to( '../../index.php?univ=' . $initial_univ );
-						else
-							Redirect::to( '../../index.php);
+							Redirect::to( 'index.php);
 
 					} else {
 
