@@ -26,7 +26,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 						echo 'window.alert("login success");';
 						echo '</script>';
 					   
-					   // Redirect::to('https://umseth.herokuapp.com/Views/Admin/index.php');
+					    Redirect::to('Views/Admin/index.php');
                     }else{
 						echo '<script language="javascript">';
 						echo 'window.alert("no login 1");';
