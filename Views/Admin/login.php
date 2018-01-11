@@ -22,7 +22,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     $userData = Unique::getUserData();
                     if (Input::get('email') === $userData->email && hash('sha256', Input::get('password')) === $userData->password){
                         Session::put('user', $userData->id);
-						echo "Session is".$_SESSION['user']
+						echo "Session is".$_SESSION['user'];
                        echo '<script language="javascript">';
 						echo 'window.alert("login success");';
 						echo '</script>';
