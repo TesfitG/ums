@@ -6,9 +6,10 @@ use App\Admin\Student;
 use App\Admin\Teacher;
 use App\Admin\Course;
 use App\Admin\Department;
-if (!Session::exists('user')){
-    Redirect::to('../../index.php');
-}
+//if (!Session::exists('user')){
+  //  Redirect::to('../../index.php');
+//}
+echo "session value here: ".$_Session['user'];
 
 // Deleting student registration No of 'student info page'.
 if (Session::exists('regNo')){
