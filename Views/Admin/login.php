@@ -22,14 +22,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     $userData = Unique::getUserData();
                     if (Input::get('email') === $userData->email && hash('sha256', Input::get('password')) === $userData->password){
                         Session::put('user', $userData->id);
-                        Redirect::to('index.php');
+                       // Redirect::to('index.php');
                     }else{
 						echo '<script language="javascript">';
 						echo 'window.alert("no login 1");';
 						echo '</script>';
 
                         Session::put('error', 'Email or password not valid. please try again.');
-                        Redirect::to('../../index.php');
+                        //Redirect::to('../../index.php');
 						
                     }
                 }else{
@@ -38,7 +38,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 						echo '</script>';
 
                     Session::put('error', 'Email or password not valid.');
-                    Redirect::to('../../index.php');
+                    //Redirect::to('../../index.php');
                 }
             }else{
 						echo '<script language="javascript">';
@@ -46,7 +46,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 						echo '</script>';
 
                 Session::put('error', 'Email not valid !');
-                Redirect::to('../../index.php');
+                //Redirect::to('../../index.php');
             }
         }else{
 									echo '<script language="javascript">';
@@ -54,7 +54,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 						echo '</script>';
 
             Session::put('error', 'Invalid input !');
-            Redirect::to('../../index.php');
+            //Redirect::to('../../index.php');
         }
     }else{
 						echo '<script language="javascript">';
@@ -62,8 +62,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 						echo '</script>';
 
         Session::put('error', 'Email or Password not be empty!');
-        Redirect::to('../../index.php');
+        //Redirect::to('../../index.php');
     }
 }else{
-    Redirect::to('../../index.php');
+	echo '<script language="javascript">';
+						echo 'window.alert("no login 6");';
+						echo '</script>';
+   // Redirect::to('../../index.php');
 }
