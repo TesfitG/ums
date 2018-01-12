@@ -6,7 +6,6 @@ use App\Admin\Student;
 use App\Admin\Teacher;
 use App\Admin\Course;
 use App\Admin\Department;
-session_start();
 if (!Session::exists('user')){
    Redirect::to('../../index.php');
 }
