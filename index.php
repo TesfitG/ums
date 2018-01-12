@@ -13,7 +13,7 @@ if (Session::exists('user')) {
 	else
 	{
 		$_SESSION['univ']= 'unknown';
-		Redirect::to('https://univcloud.herokuapp.com');
+		Redirect::to('https://univcloud.herokuapp.com/index.php');
 
 	}
 	
