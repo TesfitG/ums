@@ -1,5 +1,6 @@
 <?php
 require_once "vendor/autoload.php";
+session_start();
 use App\Core\Session;
 use App\Core\Redirect;
 error_reporting(E_ALL);
