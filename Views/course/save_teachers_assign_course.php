@@ -7,7 +7,7 @@ use App\Admin\Course;
 use App\Core\Redirect;
 use App\Core\Validation;
 
-if (!Session::exists('user')){
+session_start();if (!Session::exists('user')){
     Redirect::to('course_assign_to_teacher');
 }
 

@@ -9,7 +9,8 @@ use App\Admin\Department;
 $department_id = Input::get('department');
 $department_id = explode(';',$department_id);
 $department_id = end($department_id);
-if (!Session::exists('user')){
+
+session_start();if (!Session::exists('user')){
     Redirect::to('../../index.php');
 }
 

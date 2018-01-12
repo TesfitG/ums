@@ -6,7 +6,7 @@ use App\Admin\Department;
 use App\Admin\Room;
 use App\Admin\Day;
 
-if (!Session::exists('user')){
+session_start();if (!Session::exists('user')){
     Redirect::to('../../index.php');
 }
 

@@ -5,7 +5,7 @@ use App\Core\Session;
 use App\Core\Redirect;
 use App\Admin\Student;
 use App\Admin\Result;
-if (!Session::exists('user')){
+session_start();if (!Session::exists('user')){
     Redirect::to('../../index.php');
 }
 $regNo = '';

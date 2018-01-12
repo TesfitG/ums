@@ -5,7 +5,7 @@ use App\Admin\Department;
 use App\Core\Redirect;
 
 $time = serialize(time());
-if (!Session::exists('user')){
+session_start();if (!Session::exists('user')){
     Redirect::to('../../index.php');
 }
 
