@@ -23,9 +23,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 						
                         Session::put('error', 'Email or password not valid. please try again.');
                        
-						if(isset(_SESSION['link']))
+						if(isset($_SESSION['link']))
 						{
-							$uuu = (string)_SESSION['link'];
+							$uuu = (string)$_SESSION['link'];
 						}
 						else
 						{
@@ -38,9 +38,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 						
                     Session::put('error', 'Email or password not valid.');
 					
-                    if(isset(_SESSION['link']))
+                    if(isset($_SESSION['link']))
 						{
-							$uuu = (string)_SESSION['link'];
+							$uuu = (string)$_SESSION['link'];
 						}
 						else
 						{
@@ -52,9 +52,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             }else{
 						
                 Session::put('error', 'Email not valid !');
-				if(isset(_SESSION['link']))
+				if(isset($_SESSION['link']))
 				{
-					$uuu = (string)_SESSION['link'];
+					$uuu = (string)$_SESSION['link'];
 				}
 				else
 				{
