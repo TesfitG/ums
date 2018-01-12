@@ -38,7 +38,7 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' ) {
 						Session::put( 'user', $userData->id );
 						echo "here1==>".$_SESSION['link'];
 ;
-						Redirect::to( 'index.php' );
+						//Redirect::to( 'index.php' );
 
 					} else {
 						echo "here2==>".$_SESSION['link'];
