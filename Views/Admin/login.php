@@ -16,12 +16,20 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' ) {
 	if ( Input::exists( 'post' ) ) {
 		if ( Validation::valid( Input::get( 'email' ) ) && Validation::valid( Input::get( 'password' ) ) ) {
 			if ( Validation::emailValidation( Input::get( 'email' ) ) ) {
-				if ( !Unique::checkUser( Input::get( 'email' ) ) ) {
+				if ( !Unique::checkUser( Input::get( 'email' ) ) ) { // if email is found in database(not unique)
 					$userData = Unique::getUserData();
 					if ( Input::get( 'email' ) === $userData->email && hash( 'sha256', Input::get( 'password' ) ) === $userData->password ) {
 						Session::put( 'user', $userData->id );
 						//echo "here1==>".$_SESSION['univ'];
-						Redirect::to('index.php');
+						if(isset($_Session['univ']))
+						{
+							$uuu= (string)$_Session['univ'];
+							Redirect::to('index.php?univ='.$uuu);
+						}
+						else
+						{
+							Redirect::to('index.php');
+						}
 
 					} else {
 						echo "here2==>".$_SESSION['univ'];
