@@ -1,4 +1,5 @@
 <?php  namespace App\Core;
+session_start();
 //this class is responsible for all CRUD operations for this project.
 use PDO;
 class DB
@@ -48,7 +49,7 @@ class DB
 		}
 		else
 		{
-			$dbname = 'gcp_560d7f4ddd1bd4129f05'; 
+				$dbname = 'gcp_560d7f4ddd1bd4129f05'; 
 				$username='bc1b42e7e30580';
 				$password='67a767d6';
 		}
