@@ -7,12 +7,27 @@ if (Session::exists('user')) {
     Redirect::to('Views/Admin/index.php');
 }
 	
-	
-	
-	if(isset($_GET['univ']) && !(isset($_SESSION['link'])))
-		$_SESSION['link']= $_GET['univ'];
+	if(isset($_GET['univ']))
+	{
+		if(isset($_SESSION['link'])
+		{
+			
+			if($_SESSION['link'] != $_GET['univ'])
+			{
+				$_SESSION['link'] = $_GET['univ'];
+			}
+		}
+		else
+		{
+			$_SESSION['link'] = $_GET['univ'];
+			
+		}
+	}
 	else
+	{
 		$_SESSION['link']= 'astu';
+	}
+		
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 ?>
