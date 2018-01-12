@@ -6,7 +6,10 @@ use App\Core\Redirect;
 if (Session::exists('user')) {
     Redirect::to('Views/Admin/index.php');
 }
-	if(isset($_GET['univ']))
+	
+	
+	
+	if(isset($_GET['univ']) && !(isset($_SESSION['link'])))
 		$_SESSION['link']= $_GET['univ'];
 	else
 		$_SESSION['link']= 'astu';
