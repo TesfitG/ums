@@ -14,8 +14,9 @@ else if(isset($_GET['univ']))
 	}
 	else
 	{
-		$_SESSION['univ']= 'unknown';
-		Redirect::to('https://univcloud.herokuapp.com/index.php');
+		echo "we are here";
+		//$_SESSION['univ']= 'unknown';
+		//Redirect::to('https://univcloud.herokuapp.com/index.php');
 
 	}
 	
