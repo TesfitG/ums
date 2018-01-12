@@ -25,7 +25,7 @@ $totalDepartmentNo = Department::getAllDepartmentNo();
 <?php require_once "header.php"?>
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header"> Dashboardd</h1>
+                <h1 class="page-header"> Dashboard</h1>
             </div>
         </div>
         <!--/.row-->

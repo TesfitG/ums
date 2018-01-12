@@ -22,19 +22,46 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     }else{
 						
                         Session::put('error', 'Email or password not valid. please try again.');
-                        Redirect::to('../../index.php');
+                       
+						if(isset(_SESSION['link']))
+						{
+							$uuu = (string)_SESSION['link'];
+						}
+						else
+						{
+							$uuu = 'astu';
+						}
+					   Redirect::to('../../index.php?univ='.$uuu);
 						
                     }
                 }else{
 						
                     Session::put('error', 'Email or password not valid.');
-                    Redirect::to('../../index.php');
+					
+                    if(isset(_SESSION['link']))
+						{
+							$uuu = (string)_SESSION['link'];
+						}
+						else
+						{
+							$uuu = 'astu';
+						}
+					   Redirect::to('../../index.php?univ='.$uuu);
+						
                 }
             }else{
 						
                 Session::put('error', 'Email not valid !');
-                //Redirect::to('../../index.php');
-            }
+				if(isset(_SESSION['link']))
+				{
+					$uuu = (string)_SESSION['link'];
+				}
+				else
+				{
+					$uuu = 'astu';
+				}
+				Redirect::to('../../index.php?univ='.$uuu);
+						            }
         }else{
 									echo '<script language="javascript">';
 						echo 'window.alert("no login 4");';
