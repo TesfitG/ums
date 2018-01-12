@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 session_start();
 if (Session::exists('user')) {
-    Redirect::to('Views/Admin/index.php');
+    //Redirect::to('Views/Admin/index.php');
 }
 else if(isset($_GET['univ']))
 	{
