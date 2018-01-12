@@ -3,9 +3,9 @@ require_once "vendor/autoload.php";
 use App\Core\Session;
 use App\Core\Redirect;
 session_start();
-if (Session::exists('user')) {
-    Redirect::to('Views/Admin/index.php');
-}
+//if (Session::exists('user')) {
+  //  Redirect::to('Views/Admin/index.php');
+//}
 	if(isset($_GET['univ']))
 	{
 		$_SESSION['univ']= $_GET['univ'];
