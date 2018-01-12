@@ -44,10 +44,10 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' ) {
 
 						Session::put( 'error', 'Email or password not valid. please try again.' );
 						
-						//if ( !empty( $initial_univ ) )
-							//Redirect::to( '../../index.php?univ=' . $initial_univ );
-						//else
-							//Redirect::to( '../../index.php' );
+						if ( !empty( $initial_univ ) )
+							Redirect::to( '../../index.php?univ=' . $initial_univ );
+						else
+							Redirect::to( '../../index.php' );
 					}
 				} else {
 											echo "here3";

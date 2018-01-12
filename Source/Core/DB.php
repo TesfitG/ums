@@ -67,7 +67,7 @@ class DB
     //create object for this class by using this function.
     public static function getDB()
     {
-		session_start();
+		//session_start();
 		$dbname='';
 		$username='';
 		$password='';
