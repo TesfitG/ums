@@ -1,11 +1,11 @@
 <?php
 require_once "../../vendor/autoload.php";
+session_start();
 use App\Core\Input;
 use App\Core\Session;
 use App\Core\Unique;
 use App\Core\Redirect;
 use App\Core\Validation;
-session_start();
 //print_r($_POST);exit();
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
