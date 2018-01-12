@@ -6,12 +6,10 @@ use App\Admin\Student;
 use App\Admin\Teacher;
 use App\Admin\Course;
 use App\Admin\Department;
-
 session_start();
 if (!Session::exists('user')){
-   Redirect::to('../../index.php');
+    Redirect::to('../../index.php');
 }
-
 // Deleting student registration No of 'student info page'.
 if (Session::exists('regNo')){
     Session::delete('regNo');
@@ -20,21 +18,17 @@ $totalStudentNo = Student::getAllStudentsNo();
 $totalTeacherNo = Teacher::getAllTeacherNO();
 $totalCourseNo = Course::getAllCourseNo();
 $totalDepartmentNo = Department::getAllDepartmentNo();
-
 //echo $totalDepartmentNo;exit();
-
 ?>
 
 
 <?php require_once "header.php"?>
-
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">Dashboard</h1>
             </div>
         </div>
         <!--/.row-->
-
         <div class="row">
             <div class="col-xs-12 col-md-6 col-lg-3">
                 <div class="panel panel-blue panel-widget ">

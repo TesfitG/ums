@@ -1,28 +1,16 @@
 <?php
 require_once "vendor/autoload.php";
-session_start();
 use App\Core\Session;
 use App\Core\Redirect;
-session_start();
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
 if (Session::exists('user')) {
     Redirect::to('Views/Admin/index.php');
 }
-
 	if(isset($_GET['univ']))
-	{
-		$_SESSION['univ']= $_GET['univ'];
-	}
-	
-	
-	//{
-		//echo "we are here";
-		//$_SESSION['univ']= 'unknown';
-		//Redirect::to('https://univcloud.herokuapp.com/index.php');
-
-	//}
-	
+		$_SESSION['link']= $_GET['univ'];
+	else
+		$_SESSION['link']= 'astu';
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 ?>
 
 
@@ -56,23 +44,22 @@ if (Session::exists('user')) {
 <!--                <h1 class="text-center login-title login_welcome">Welcome to University of Washington</h1>-->
                 <div class="account-wall">
 				<?php
-				if(isset($_SESSION['univ']))
+				if(isset($_SESSION['link']))
 				{
-							if( $_SESSION['univ']=='astu')
+							if( $_SESSION['link']=='astu')
 							{
 		                    echo '<img class="profile-img" src="Views/assets/images/astu.png">';
 							}
-							else if( $_SESSION['univ']=='aau')
+							else if( $_SESSION['link']=='aau')
 							{
 		                    echo '<img class="profile-img" src="Views/assets/images/aaulogo.png">';
 							}
-							else if( $_SESSION['univ']=='aastu')
+							else if( $_SESSION['link']=='aastu')
 		                    echo '<img class="profile-img" src="Views/assets/images/aastulogo.jpg">';
-							else if( $_SESSION['univ']=='du')
+							else if( $_SESSION['link']=='du')
 		                    echo '<img class="profile-img" src="Views/assets/images/dulogo.png">';
 							else
 		                    echo '<img class="profile-img" src="Views/assets/images/logo.gif">';
-
 				}
 				?>
 				
