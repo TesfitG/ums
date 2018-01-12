@@ -7,7 +7,7 @@ use App\Admin\Teacher;
 use App\Admin\Course;
 use App\Admin\Department;
 session_start();
-session_start();if (!Session::exists('user')){
+if (!Session::exists('user')){
    Redirect::to('../../index.php');
 }
 
