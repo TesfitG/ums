@@ -20,24 +20,34 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' ) {
 					$userData = Unique::getUserData();
 					if ( Input::get( 'email' ) === $userData->email && hash( 'sha256', Input::get( 'password' ) ) === $userData->password ) {
 						Session::put( 'user', $userData->id );
-						//echo "here1==>".$_SESSION['univ'];
-						if(isset($_Session['univ']))
+						echo "here1==>".$_SESSION['univ'];
+						
+
+					} else {
+						/* if(isset($_Session['univ']))
 						{
 							$uuu= (string)$_Session['univ'];
-							Redirect::to('index.php?univ='.$uuu);
+							Redirect::to('../../index.php?univ='.$uuu);
 						}
 						else
 						{
-							Redirect::to('index.php');
-						}
-
-					} else {
+							Redirect::to('../../index.php');
+						} */
 						echo "here2==>".$_SESSION['univ'];
 						Session::put( 'error', 'Email or password not valid. please try again.' );
 					//	Redirect::to( '../../index.php' );
 					}
 				} else {
-						echo "here3==>".$_SESSION['univ'];
+					i/* f(isset($_Session['univ']))
+						{
+							$uuu= (string)$_Session['univ'];
+							Redirect::to('../../index.php?univ='.$uuu);
+						}
+						else
+						{
+							Redirect::to('../../index.php');
+						} */
+					echo "here3==>".$_SESSION['univ'];
 					Session::put( 'error', 'Email or password not valid.' );
 					//Redirect::to( '../../index.php' );
 				}
