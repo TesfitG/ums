@@ -38,7 +38,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="../Admin/index.php"><span>Admin </span> Dashboard</a>
+            <a class="navbar-brand" href="../Admin/index.php"><span><?php echo $_SESSION["link"];?></span> Dashboard</a>
             <ul class="user-menu">
                 <li class="dropdown pull-right">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> User <span class="caret"></span></a>
