@@ -7,9 +7,16 @@ if (Session::exists('user')) {
     Redirect::to('Views/Admin/index.php');
 }
 	if(isset($_GET['univ']))
-		$_SESSION['link']= $_GET['univ'];
+	{
+		$_SESSION['univ']= $_GET['univ'];
+	}
 	else
-		$_SESSION['link']= 'astu';
+	{
+		$_SESSION['univ']= 'unknown';
+		Redirect::to('https://univcloud.herokuapp.com');
+
+	}
+	
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 ?>

@@ -11,22 +11,7 @@ session_start();
 error_reporting( E_ALL );
 ini_set( 'display_errors', '1' );
 
-if ( isset( $_SESSION[ 'reload' ] ) )
-{
-	$_SESSION[ 'reload' ] = 'No';
-}
-else
-{
-	$_SESSION[ 'reload' ] = 'Yes';
-}
 
-if ( $_SESSION[ 'reload' ] == 'Yes' ) {
-	if ( isset( $_GET[ 'univ' ] ) ) {
-		$initial_univ = $_GET[ 'univ' ];
-	} else {
-		$initial_univ = '';
-	}
-}
 
 if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' ) {
 	if ( Input::exists( 'post' ) ) {
@@ -36,12 +21,12 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' ) {
 					$userData = Unique::getUserData();
 					if ( Input::get( 'email' ) === $userData->email && hash( 'sha256', Input::get( 'password' ) ) === $userData->password ) {
 						Session::put( 'user', $userData->id );
-						echo "here1==>".$_SESSION['link'];
+						echo "here1==>".$_SESSION['univ'];
 
 						//Redirect::to( 'index.php' );
 
 					} else {
-						echo "here2==>".$_SESSION['link'];
+						echo "here2==>".$_SESSION['univ'];
 
 						Session::put( 'error', 'Email or password not valid. please try again.' );
 						
@@ -51,7 +36,7 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' ) {
 							Redirect::to( '../../index.php' );
 					}
 				} else {
-						echo "here3==>".$_SESSION['link'];
+						echo "here3==>".$_SESSION['univ'];
 
 					Session::put( 'error', 'Email or password not valid.' );
 					//if ( !empty( $initial_univ ) )

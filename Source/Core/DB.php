@@ -12,9 +12,9 @@ class DB
 		$dbname='';
 		$username='';
 		$password='';
-		if(isset($_SESSION['link']))
+		if(isset($_SESSION['univ']))
 		{
-			switch($_SESSION['link'])
+			switch($_SESSION['univ'])
 			{
 				case 'astu': 
 				$dbname = 'gcp_560d7f4ddd1bd4129f05'; 
@@ -67,7 +67,6 @@ class DB
     //create object for this class by using this function.
     public static function getDB()
     {
-		//session_start();
 		$dbname='';
 		$username='';
 		$password='';
