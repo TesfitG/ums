@@ -21,7 +21,6 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' ) {
 					if ( Input::get( 'email' ) === $userData->email && hash( 'sha256', Input::get( 'password' ) ) === $userData->password ) {
 						Session::put( 'user', $userData->id );
 						echo "here1==>".$_SESSION['univ'];
-						
 
 					} else {
 						/* if(isset($_Session['univ']))
@@ -54,23 +53,27 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' ) {
 			} else {
 				Session::put( 'error', 'Email not valid !' );
 				//Redirect::to( '../../index.php' );
+						echo "here3";
+
 
 			}
 		} else {
 
 			Session::put( 'error', 'Invalid input !' );
+		echo "here4";
 
-			Redirect::to( '../../index.php' );
+			//Redirect::to( '../../index.php' );
 
 		}
 	} else {
+		echo "here5";
 
 		Session::put( 'error', 'Email or Password not be empty!' );
-		Redirect::to( '../../index.php' );
+		//Redirect::to( '../../index.php' );
 
 	}
 } else {
-		//echo "here6";
-Redirect::to( '../../index.php' );
+		echo "here6";
+//Redirect::to( '../../index.php' );
 
 }
