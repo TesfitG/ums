@@ -12,9 +12,13 @@ error_reporting( E_ALL );
 ini_set( 'display_errors', '1' );
 
 if ( isset( $_SESSION[ 'reload' ] ) )
+{
 	$_SESSION[ 'reload' ] = 'No';
+}
 else
+{
 	$_SESSION[ 'reload' ] = 'Yes';
+}
 
 if ( $_SESSION[ 'reload' ] == 'Yes' ) {
 	if ( isset( $_GET[ 'univ' ] ) ) {
@@ -39,23 +43,26 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' ) {
 						echo "here2";
 
 						Session::put( 'error', 'Email or password not valid. please try again.' );
-						if ( !empty( $initial_univ ) )
+						
+						//if ( !empty( $initial_univ ) )
 							//Redirect::to( '../../index.php?univ=' . $initial_univ );
-						else
+						//else
 							//Redirect::to( '../../index.php' );
 					}
 				} else {
+											echo "here3";
+
 					Session::put( 'error', 'Email or password not valid.' );
-					if ( !empty( $initial_univ ) )
+					//if ( !empty( $initial_univ ) )
 						//Redirect::to( '../../index.php?univ=' . $initial_univ );
-					else
+					//else
 						//Redirect::to( '../../index.php' );
 				}
 			} else {
 				Session::put( 'error', 'Email not valid !' );
-				if ( !empty( $initial_univ ) )
+				//if ( !empty( $initial_univ ) )
 					//Redirect::to( '../../index.php?univ=' . $initial_univ );
-				else
+				//else
 					//Redirect::to( '../../index.php' );
 
 			}
@@ -63,9 +70,9 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' ) {
 
 			Session::put( 'error', 'Invalid input !' );
 
-			if ( !empty( $initial_univ ) )
+			//if ( !empty( $initial_univ ) )
 				//Redirect::to( '../../index.php?univ=' . $initial_univ );
-			else
+			//else
 				//Redirect::to( '../../index.php' );
 
 		}
@@ -73,18 +80,19 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' ) {
 
 
 		Session::put( 'error', 'Email or Password not be empty!' );
-		if ( !empty( $initial_univ ) )
+		//if ( !empty( $initial_univ ) )
 		//	Redirect::to( '../../index.php?univ=' . $initial_univ );
-		else
+		//else
 			//Redirect::to( '../../index.php' );
 
 
 	}
 } else {
+						echo "here6";
 
-	if ( !empty( $initial_univ ) )
-		Redirect::to( '../../index.php?univ=' . $initial_univ );
-	else
-		Redirect::to( '../../index.php' );
+	//if ( !empty( $initial_univ ) )
+		//Redirect::to( '../../index.php?univ=' . $initial_univ );
+	//else
+		//Redirect::to( '../../index.php' );
 
 }
