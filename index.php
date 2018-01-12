@@ -3,10 +3,13 @@ require_once "vendor/autoload.php";
 use App\Core\Session;
 use App\Core\Redirect;
 session_start();
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
 if (Session::exists('user')) {
     Redirect::to('Views/Admin/index.php');
 }
-	if(isset($_GET['univ']))
+	/*if(isset($_GET['univ']))
 	{
 		$_SESSION['univ']= $_GET['univ'];
 		
@@ -16,10 +19,8 @@ if (Session::exists('user')) {
 		$_SESSION['univ']= 'unknown';
 		//Redirect::to('https://univcloud.herokuapp.com/index.php');
 
-	}
+	}*/
 	
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
 ?>
 
 

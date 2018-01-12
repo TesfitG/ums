@@ -22,7 +22,7 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' ) {
 					if ( Input::get( 'email' ) === $userData->email && hash( 'sha256', Input::get( 'password' ) ) === $userData->password ) {
 						Session::put( 'user', $userData->id );
 						//echo "here1==>".$_SESSION['univ'];
-						Redirect::to( 'index.php?univ='.$_SESSION['univ'] );
+						Redirect::to('index.php');
 
 					} else {
 						echo "here2==>".$_SESSION['univ'];
