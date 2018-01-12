@@ -21,22 +21,22 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' ) {
 					$userData = Unique::getUserData();
 					if ( Input::get( 'email' ) === $userData->email && hash( 'sha256', Input::get( 'password' ) ) === $userData->password ) {
 						Session::put( 'user', $userData->id );
-						//echo "here1==>".$_SESSION['univ'];
-						Redirect::to( 'index.php' );
+						echo "here1==>".$_SESSION['univ'];
+						//Redirect::to( 'index.php' );
 
 					} else {
-						//echo "here2==>".$_SESSION['univ'];
+						echo "here2==>".$_SESSION['univ'];
 						Session::put( 'error', 'Email or password not valid. please try again.' );
-						Redirect::to( '../../index.php' );
+					//	Redirect::to( '../../index.php' );
 					}
 				} else {
-						//echo "here3==>".$_SESSION['univ'];
+						echo "here3==>".$_SESSION['univ'];
 					Session::put( 'error', 'Email or password not valid.' );
-					Redirect::to( '../../index.php' );
+					//Redirect::to( '../../index.php' );
 				}
 			} else {
 				Session::put( 'error', 'Email not valid !' );
-				Redirect::to( '../../index.php' );
+				//Redirect::to( '../../index.php' );
 
 			}
 		} else {
