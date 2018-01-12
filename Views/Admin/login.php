@@ -16,10 +16,13 @@ if ( isset( $_SESSION[ 'reload' ] ) )
 else
 	$_SESSION[ 'reload' ] = 'Yes';
 
-if ( $_SESSION[ 'reload' ] == 'Yes' && isset( $_GET[ 'univ' ] ) )
-	$initial_univ = $_GET[ 'univ' ];
-else if ($_SESSION[ 'reload' ] == 'Yes' && !isset( $_GET[ 'univ' ] ))
-	$initial_univ = "";
+if ( $_SESSION[ 'reload' ] == 'Yes' ) {
+	if ( isset( $_GET[ 'univ' ] ) ) {
+		$initial_univ = $_GET[ 'univ' ];
+	} else {
+		$initial_univ = '';
+	}
+}
 
 if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' ) {
 	if ( Input::exists( 'post' ) ) {
@@ -29,57 +32,57 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' ) {
 					$userData = Unique::getUserData();
 					if ( Input::get( 'email' ) === $userData->email && hash( 'sha256', Input::get( 'password' ) ) === $userData->password ) {
 						Session::put( 'user', $userData->id );
-						Redirect::to( 'index.php');
+						Redirect::to( 'index.php' );
 
 					} else {
 
 						Session::put( 'error', 'Email or password not valid. please try again.' );
-						if ( !$initial_univ == "" )
+						if ( !empty( $initial_univ ) )
 							Redirect::to( '../../index.php?univ=' . $initial_univ );
 						else
-							Redirect::to( '../../index.php);
+							Redirect::to( '../../index.php' );
 					}
 				} else {
 					Session::put( 'error', 'Email or password not valid.' );
-					if ( !$initial_univ == "" )
+					if ( !empty( $initial_univ ) )
 						Redirect::to( '../../index.php?univ=' . $initial_univ );
 					else
-						Redirect::to( '../../index.php);
+						Redirect::to( '../../index.php' );
 				}
 			} else {
 				Session::put( 'error', 'Email not valid !' );
-				if ( !$initial_univ == "" )
+				if ( !empty( $initial_univ ) )
 					Redirect::to( '../../index.php?univ=' . $initial_univ );
 				else
-					Redirect::to( '../../index.php);
+					Redirect::to( '../../index.php' );
 
 			}
 		} else {
 
 			Session::put( 'error', 'Invalid input !' );
 
-			if ( !$initial_univ == "" )
+			if ( !empty( $initial_univ ) )
 				Redirect::to( '../../index.php?univ=' . $initial_univ );
 			else
-				Redirect::to( '../../index.php);
+				Redirect::to( '../../index.php' );
 
 		}
 	} else {
 
 
 		Session::put( 'error', 'Email or Password not be empty!' );
-		if ( !$initial_univ == "" )
+		if ( !empty( $initial_univ ) )
 			Redirect::to( '../../index.php?univ=' . $initial_univ );
 		else
-			Redirect::to( '../../index.php);
+			Redirect::to( '../../index.php' );
 
 
 	}
 } else {
 
-	if ( !$initial_univ == "" )
+	if ( !empty( $initial_univ ) )
 		Redirect::to( '../../index.php?univ=' . $initial_univ );
-			else
-							Redirect::to( '../../index.php);
+	else
+		Redirect::to( '../../index.php' );
 
 }
