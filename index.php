@@ -52,7 +52,7 @@ ini_set('display_errors', '1');
 <!--                <h1 class="text-center login-title login_welcome">Welcome to University of Washington</h1>-->
                 <div class="account-wall">
 				<?php
-				if(isset($_SESSION['link']))
+				if(isset($_SESSION['univ']))
 				{
 							if( $_SESSION['univ']=='astu')
 							{

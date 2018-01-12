@@ -26,7 +26,6 @@ class DB
 				$dbname = 'gcp_7a6e18880e1cd5299b68'; 
 				$username='bf794cad1dacca';
 				$password='87b7008b';
-				echo "i got aau";
 				break;
 				
 				case 'aastu': 
@@ -84,7 +83,6 @@ class DB
 				$dbname = 'gcp_7a6e18880e1cd5299b68'; 
 				$username='bf794cad1dacca';
 				$password='87b7008b';
-				echo "i got aau";
 				break;
 				
 				case 'aastu': 
