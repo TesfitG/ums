@@ -11,19 +11,8 @@ if (Session::exists('user')) {
 	
 	if(isset($_GET['univ']))
 	{
-		if(isset($_SESSION['link'])
-		{
-			
-			if($_SESSION['link'] != $_GET['univ'])
-			{
-				$_SESSION['link'] = $_GET['univ'];
-			}
-			
-		}
-		else
-		{
-			$_SESSION['link'] = $_GET['univ'];	
-		}
+		$_SESSION['link'] = $_GET['univ'];			
+
 	}
 	else
 	{
