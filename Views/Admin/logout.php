@@ -2,6 +2,7 @@
 require_once "../../vendor/autoload.php";
 use App\Core\Session;
 use App\Core\Redirect;
+session_start();
 
 // Deleting student registration No of 'student info page'.
 if (Session::exists('regNo')){
