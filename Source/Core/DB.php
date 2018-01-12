@@ -9,13 +9,12 @@ class DB
 	
     private function __construct()
     {
-		session_start();
 		$dbname='';
 		$username='';
 		$password='';
-		if(isset($_SESSION['univ']))
+		if(isset($_SESSION['link']))
 		{
-			switch($_SESSION['univ'])
+			switch($_SESSION['link'])
 			{
 				case 'astu': 
 				$dbname = 'gcp_560d7f4ddd1bd4129f05'; 
@@ -69,9 +68,9 @@ class DB
 		$dbname='';
 		$username='';
 		$password='';
-		if(isset($_SESSION['univ']))
+		if(isset($_SESSION['link']))
 		{
-			switch($_SESSION['univ'])
+			switch($_SESSION['link'])
 			{
 				case 'astu': 
 				$dbname = 'gcp_560d7f4ddd1bd4129f05'; 
