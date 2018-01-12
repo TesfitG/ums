@@ -1,4 +1,6 @@
 <?php  namespace App\Core;
+require_once "../../vendor/autoload.php";
+session_start();
 //this class is responsible for all CRUD operations for this project.
 use PDO;
 class DB
@@ -6,9 +8,10 @@ class DB
     private static $_instance = null;
     private $_pdo;
 	
+	//TGA comment: for non static way of creation we use the constructor 
+	// for static use, we call the static funtion getDB
     private function __construct()
     {
-		session_start();
 		$dbname='';
 		$username='';
 		$password='';
@@ -49,8 +52,8 @@ class DB
 		else
 		{
 			$dbname = 'gcp_560d7f4ddd1bd4129f05'; 
-				$username='bc1b42e7e30580';
-				$password='67a767d6';
+			$username='bc1b42e7e30580';
+			$password='67a767d6';
 		}
 		
         try 

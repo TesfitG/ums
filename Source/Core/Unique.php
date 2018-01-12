@@ -26,9 +26,9 @@ class Unique
         if($taskReplay){
             self::$allData = $query->fetch(PDO::FETCH_OBJ);
             $count = $query->rowCount();
-            if ($count){
+            if ($count){ // TGA: count is non zero therefore it is not unique
                 return false;
-            }else{
+            }else{       // TGA: count is 0 so it is unique
                 return true;
             }
         }else{
