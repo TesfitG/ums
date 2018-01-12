@@ -9,7 +9,7 @@ ini_set('display_errors', '1');
 if (Session::exists('user')) {
     Redirect::to('Views/Admin/index.php');
 }
-	/*if(isset($_GET['univ']))
+	if(isset($_GET['univ']))
 	{
 		$_SESSION['univ']= $_GET['univ'];
 		
@@ -17,9 +17,9 @@ if (Session::exists('user')) {
 	else
 	{
 		$_SESSION['univ']= 'unknown';
-		//Redirect::to('https://univcloud.herokuapp.com/index.php');
+		Redirect::to('https://univcloud.herokuapp.com/index.php');
 
-	}*/
+	}
 	
 ?>
 
