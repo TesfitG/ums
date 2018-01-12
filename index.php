@@ -54,17 +54,17 @@ ini_set('display_errors', '1');
 				<?php
 				if(isset($_SESSION['link']))
 				{
-							if( $_SESSION['link']=='astu')
+							if( $_SESSION['univ']=='astu')
 							{
 		                    echo '<img class="profile-img" src="Views/assets/images/astu.png">';
 							}
-							else if( $_SESSION['link']=='aau')
+							else if( $_SESSION['univ']=='aau')
 							{
 		                    echo '<img class="profile-img" src="Views/assets/images/aaulogo.png">';
 							}
-							else if( $_SESSION['link']=='aastu')
+							else if( $_SESSION['univ']=='aastu')
 		                    echo '<img class="profile-img" src="Views/assets/images/aastulogo.jpg">';
-							else if( $_SESSION['link']=='du')
+							else if( $_SESSION['univ']=='du')
 		                    echo '<img class="profile-img" src="Views/assets/images/dulogo.png">';
 							else
 		                    echo '<img class="profile-img" src="Views/assets/images/logo.gif">';
