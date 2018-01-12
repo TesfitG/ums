@@ -36,11 +36,12 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' ) {
 					$userData = Unique::getUserData();
 					if ( Input::get( 'email' ) === $userData->email && hash( 'sha256', Input::get( 'password' ) ) === $userData->password ) {
 						Session::put( 'user', $userData->id );
-						echo "here1";
+						echo "here1==>".$_SESSION['link'];
+;
 						Redirect::to( 'index.php' );
 
 					} else {
-						echo "here2";
+						echo "here2==>".$_SESSION['link'];
 
 						Session::put( 'error', 'Email or password not valid. please try again.' );
 						
@@ -50,7 +51,7 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' ) {
 							Redirect::to( '../../index.php' );
 					}
 				} else {
-											echo "here3";
+						echo "here3==>".$_SESSION['link'];
 
 					Session::put( 'error', 'Email or password not valid.' );
 					//if ( !empty( $initial_univ ) )
