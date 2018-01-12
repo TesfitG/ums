@@ -45,7 +45,25 @@
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="#"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Profile</a></li>
                         <li><a href="#"><svg class="glyph stroked gear"><use xlink:href="#stroked-gear"></use></svg> Settings</a></li>
-                        <li><a href="../Admin/logout.php"><svg class="glyph stroked cancel"><use xlink:href="#stroked-cancel"></use></svg> Logout</a></li>
+                        <?php
+						session_start();
+						if(isset($_SESSION['link']))
+						{
+							$uuu = $_SESSION['link'];
+						}
+						else
+						{
+							$uuu = 'astu';
+						}
+						
+						echo '<li><a href="../Admin/logout.php?univ='.$uuu.'">';
+
+						?>
+                        
+                        
+                        
+                        
+                        <svg class="glyph stroked cancel"><use xlink:href="#stroked-cancel"></use></svg> Logout</a></li>
                     </ul>
                 </li>
             </ul>
