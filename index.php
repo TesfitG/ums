@@ -1,14 +1,26 @@
 <?php
 require_once "vendor/autoload.php";
+session_start();
 use App\Core\Session;
 use App\Core\Redirect;
-
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 if (Session::exists('user')) {
     Redirect::to('Views/Admin/index.php');
 }
+	
 	if(isset($_GET['univ']))
-		$_SESSION['link']= $_GET['univ'];
+	{
+		$_SESSION['link'] = $_GET['univ'];			
 
+	}
+	else
+	{
+		$_SESSION['link']= 'astu';
+	}
+		
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 ?>
 
 
@@ -58,11 +70,7 @@ if (Session::exists('user')) {
 		                    echo '<img class="profile-img" src="Views/assets/images/dulogo.png">';
 							else
 		                    echo '<img class="profile-img" src="Views/assets/images/logo.gif">';
-
 				}
-				
-				
-				
 				?>
 				
 				

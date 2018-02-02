@@ -4,8 +4,7 @@ use App\Core\Redirect;
 use App\Core\Session;
 use App\Core\Input;
 use App\Admin\Department;
-
-if (!Session::exists('user')){
+session_start();if (!Session::exists('user')){
     Redirect::to('../../index.php');
 }
 

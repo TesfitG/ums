@@ -8,7 +8,7 @@ use App\Core\Unique;
 use App\Admin\Department;
 $time = serialize(time());
 
-if (!Session::exists('user')){
+session_start();if (!Session::exists('user')){
     Redirect::to('../../index.php');
 }
 

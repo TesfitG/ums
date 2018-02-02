@@ -4,7 +4,7 @@
     use App\Core\Validation;
     use App\Core\Input;
     use App\Core\Redirect;
-    if (!Session::exists('user')){
+	session_start();if (!Session::exists('user')){
         Redirect::to('../../index.php');
     }
 

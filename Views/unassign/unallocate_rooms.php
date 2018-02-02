@@ -5,7 +5,7 @@ use App\Core\Redirect;
 use App\Admin\Department;
 use App\Admin\Student;
 use App\Admin\Grade;
-if (!Session::exists('user')){
+session_start();if (!Session::exists('user')){
     Redirect::to('../../index.php');
 }
 ?>

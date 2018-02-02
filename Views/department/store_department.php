@@ -7,7 +7,8 @@ use App\Core\Input;
 use App\Core\Unique;
 use App\Admin\Department;
 
-if (!Session::exists('user')){
+
+session_start();if (!Session::exists('user')){
     Redirect::to('../../index.php');
 }
 

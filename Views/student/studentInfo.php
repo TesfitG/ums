@@ -3,7 +3,7 @@ require_once "../../vendor/autoload.php";
 use App\Core\Session;
 use App\Core\Redirect;
 use App\Admin\Student;
-if (!Session::exists('user')){
+session_start();if (!Session::exists('user')){
     Redirect::to('../../index.php');
 }
 
